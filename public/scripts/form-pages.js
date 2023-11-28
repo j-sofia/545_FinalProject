@@ -117,6 +117,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 data.push([key, value]);
             }
         });
+        
+        let hasSubscribe = false;
+        for (let [key, value] of formData.entries()) {
+            if (key === 'subscribe') {
+                hasSubscribe = true;
+                break;
+            }
+        }
+
+        if (!hasSubscribe) {
+            data.push(['subscribe', 'no']);
+        }
+        
         data.push(['Total Time (seconds)', totalTime]);
         data.push(['Total Deletions', deleteCount]);
         data.push(['Total Characters Entered', characterCount]);
