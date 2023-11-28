@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Information Form</title>
+    <title>Applicant Form</title>
     <link rel="stylesheet" href="/styles/base.css">
     <link rel="stylesheet" href="<%= style === 'Casual' ? '/styles/casual.css' : '/styles/professional.css' %>">
 </head>
 <body>
     <div class="form-container <%= style === 'Casual' ? 'casual' : 'professional' %>" data-pages="<%= pages %>">
-        <h1>Personal Information Form</h1>
+        <h1>Applicant Information Form</h1>
         <form id="multiPageForm">
             <div class="form-element">
                 <label for="name">First Name:</label>
