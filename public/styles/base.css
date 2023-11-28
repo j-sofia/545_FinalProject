@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.form-container {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between; /* Ensures "Back" is left and "Next" is right */
+    margin-top: 20px;
+    width: 100%;
+}
+
+#submitButton {
+    margin-top: 15px;
+}
+
+.form-navigation > button {
+    flex: 1; /* Allows buttons to take up equal space */
+}
+
+.form-element:has(input[type="text"]),
+.form-element:has(input[type="email"]),
+.form-element:has(input[type="tel"]) {
+    display: flex;
+}
+.form-element input[type="text"],
+.form-element input[type="email"],
+.form-element input[type="tel"],
+.form-element textarea {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.form-element {
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+label {
+    text-align: left;
+    margin-right: 10px; /* Add space between label and input */
+    width: 150px; /* Fixed width for labels to align them */
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

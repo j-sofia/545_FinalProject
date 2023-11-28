@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/images/fun-background.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.casual {
+    background-color: darkorange;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.casual h1 {
+    font-family: comic sans ms, cursive;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.casual label, .casual input, .casual textarea, .casual button {
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+}
+
+.casual input, .casual textarea {
+    background-color: rgba(255, 255, 255, 0.65);
+    border: none;
+    color: black;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.casual button {
+    background-color: #58c65c;
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+}
+
+.casual button:hover {
+    background-color: #49aa4e;
+}

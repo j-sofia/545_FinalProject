@@ -1,0 +1,41 @@
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #e7e7e7;
+    color: #333;
+}
+
+.professional {
+    border-radius: 0;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.professional h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.professional label, .professional input, .professional textarea, .professional button {
+    font-family: 'Times New Roman', serif;
+    font-size: 0.95em;
+    border-radius: 0; /* Squared off */
+}
+
+.professional input, .professional textarea {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 8px;
+}
+
+.professional button {
+    background-color: #ccc; /* Neutral color */
+    color: #333;
+    padding: 10px 15px;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+
+.professional button:hover {
+    background-color: #bbb;
+}
