@@ -19,7 +19,8 @@ app.get('/', (req, res) => {
 app.get('/form', (req, res) => {
     const style = req.query.style || 'Professional';
     const pages = req.query.pages || 1;
-    res.render('form', { style, pages });
+    const guid = req.query.guid || 'bad-config';
+    res.render('form', { style, pages, guid});
 });
 
 

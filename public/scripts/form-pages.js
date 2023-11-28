@@ -12,24 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let deleteCount = 0;
     let characterCount = 0;
 
-    function showValidationMessage(input) {
-        let errorMessage = input.nextElementSibling;
-        if (input.validity.valueMissing) {
-            errorMessage.textContent = "This field is required.";
-        } else if (input.validity.typeMismatch) {
-            errorMessage.textContent = "Please enter a valid value.";
-        } else {
-            errorMessage.textContent = "";
-        }
-        errorMessage.style.display = input.validity.valid ? 'none' : 'block';
-    }
-
-    formElement.querySelectorAll('input, textarea').forEach(input => {
-        input.addEventListener('input', function() {
-            showValidationMessage(input);
-        });
-    });
-
     formElement.addEventListener('keydown', function(event) {
         if (event.key === 'Backspace' || event.key === 'Delete' || event.key === 'EraseEof' || event.key === 'Clear' || event.key === 'Del') {
             deleteCount++;
@@ -55,34 +37,47 @@ document.addEventListener('DOMContentLoaded', function() {
         nextButton.style.display = currentPage < pagesParam ? 'block' : 'none';
     }
 
-    function isCurrentPageValid() {
-        let elementIndex = 0;
+    function validateCurrentPage() {
         let isValid = true;
+        let elementIndex = 0;
         for (let page = 1; page <= pagesParam; page++) {
             let elementsOnPage = Math.ceil((totalElements - elementIndex) / (pagesParam - page + 1));
             if (page === currentPage) {
                 for (let i = 0; i < elementsOnPage; i++, elementIndex++) {
                     let inputs = formElements[elementIndex].querySelectorAll('input, textarea, select');
                     for (let input of inputs) {
-                        if (!input.checkValidity()) {
+                        let errorMessage = input.parentElement.querySelector('.error-message');
+                        if (!input.value.trim()) {
+                            errorMessage.textContent = "This field cannot be empty.";
+                            errorMessage.style.display = 'block';
                             isValid = false;
-                            break;
+                        } else if (!input.checkValidity()) {
+                            errorMessage.textContent = input.validationMessage;
+                            errorMessage.style.display = 'block';
+                            isValid = false;
+                        } else {
+                            errorMessage.textContent = "";
+                            errorMessage.style.display = 'none';
                         }
                     }
-                    if (!isValid) break;
                 }
             } else {
                 elementIndex += elementsOnPage;
             }
-            if (!isValid) break;
         }
         return isValid;
     }
 
     nextButton.addEventListener('click', function() {
-        if (isCurrentPageValid() && currentPage < pagesParam) {
+        if (validateCurrentPage() && currentPage < pagesParam) {
             currentPage++;
             updatePageVisibility();
+        }
+    });
+
+    submitButton.addEventListener('click', function() {
+        if (validateCurrentPage()) {
+            formElement.submit();
         }
     });
 
@@ -112,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let data = [];
         formData.forEach((value, key) => {
             let inputElement = formElement.querySelector(`[name="${key}"]`);
-            if (inputElement && inputElement.type !== "hidden") {
+            if (inputElement && inputElement.id !== 'formTime' && inputElement.id !== 'keystrokes' && inputElement.id !== 'charactersEntered') {
                 data.push([key, value]);
             }
         });
