@@ -13,40 +13,40 @@
         <form id="multiPageForm">
             <div class="form-element">
                 <label for="name">First Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" autocomplete="off" required>
                 <span class="error-message" style="color: red; display: none;"></span>
             </div>
             <div class="form-element">
                 <label for="lastname">Last Name:</label>
-                <input type="text" id="lastname" name="lastname" required>
+                <input type="text" id="lastname" name="lastname" autocomplete="off" required>
                 <span class="error-message" style="color: red; display: none;"></span>
             </div>
             <div class="form-element">
                 <label for="address">Street Address:</label>
-                <input type="text" id="address" name="address" required>
+                <input type="text" id="address" name="address" autocomplete="off" required>
                 <span class="error-message" style="color: red; display: none;"></span>
             </div>
             <div class="form-element">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" autocomplete="off" required>
                 <span class="error-message" style="color: red; display: none;"></span>
             </div>
             <div class="form-element">
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" name="phone autocomplete="off" required>
                 <span class="error-message" style="color: red; display: none;"></span>
             </div>
             <div class="form-element">
                 <label>Gender:</label>
-                <input type="radio" id="male" name="gender" value="male" required>
+                <input type="radio" id="male" name="gender" value="male" autocomplete="off" required>
                 <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="female" required>
+                <input type="radio" id="female" name="gender" value="female" autocomplete="off" required>
                 <label for="female">Female</label>
                 <span class="error-message" style="color: red; display: none;"></span>
             </div>
             <div class="form-element">
-                <label>Preferred Job Type:</label>
-                <select id="job-type" name="job-type" required>
+                <label for="job-type">Preferred Job Type:</label>
+                <select id="job-type" name="job-type"  autocomplete="off" required>
                     <option value="full-time">Full-Time</option>
                     <option value="part-time">Part-Time</option>
                     <option value="contract">Contract</option>
@@ -55,12 +55,12 @@
             </div>
             <div class="form-element">
                 <label for="comments">Additional Comments:</label>
-                <textarea id="comments" name="comments" rows="4" required></textarea>
+                <textarea id="comments" name="comments" rows="4"  autocomplete="off" required></textarea>
                 <span class="error-message" style="color: red; display: none;"></span>
             </div>
             <div class="form-element">
                 <label for="subscribe">Subscribe to our newsletter</label>
-                <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                <input type="checkbox" id="subscribe" name="subscribe"  autocomplete="off" value="yes">
             </div>
 
             <!-- ... hidden inputs ... -->
