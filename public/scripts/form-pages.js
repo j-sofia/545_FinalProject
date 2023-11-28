@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    formElement.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+        }
+    });
+
     formElement.addEventListener('keyup', function() {
         characterCount = [...formElement.querySelectorAll('input[type=text], input[type=email], input[type=tel], textarea')]
                             .reduce((acc, el) => acc + el.value.length, 0);
