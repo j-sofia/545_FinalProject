@@ -22,6 +22,7 @@ updateURL();
 // Event listeners for form inputs and regenerate button
 document.getElementById('numberOfPages').addEventListener('input', updateURL);
 document.getElementById('styleType').addEventListener('change', updateURL);
+document.getElementById('guid').addEventListener('change', updateURL);
 document.getElementById('regenerateGuid').addEventListener('click', function() {
     document.getElementById('guid').value = uuidv4();
     updateURL();
